@@ -1,0 +1,2 @@
+/usr/bin/ar qc lib/librtype-network.a "CMakeFiles/rtype-network.dir/Lib/Network/src/error.cpp.o"
+/usr/bin/ranlib lib/librtype-network.a

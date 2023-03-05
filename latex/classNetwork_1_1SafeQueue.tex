@@ -1,0 +1,113 @@
+\hypertarget{classNetwork_1_1SafeQueue}{}\doxysection{Network\+::Safe\+Queue$<$ Message\+Type $>$ Class Template Reference}
+\label{classNetwork_1_1SafeQueue}\index{Network::SafeQueue$<$ MessageType $>$@{Network::SafeQueue$<$ MessageType $>$}}
+
+
+{\ttfamily \#include $<$safe\+\_\+queue.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classNetwork_1_1SafeQueue_a9b336ac99de1cdc3923d19b01d265c8f}\label{classNetwork_1_1SafeQueue_a9b336ac99de1cdc3923d19b01d265c8f}} 
+\mbox{\hyperlink{classNetwork_1_1SafeQueue_a9b336ac99de1cdc3923d19b01d265c8f}{Safe\+Queue}} ()=default
+\item 
+\mbox{\hyperlink{classNetwork_1_1SafeQueue_aca473fa5343287844286d895d4c529d3}{Safe\+Queue}} (const \mbox{\hyperlink{classNetwork_1_1SafeQueue}{Safe\+Queue}} \&to\+\_\+copy)
+\item 
+\mbox{\Hypertarget{classNetwork_1_1SafeQueue_ae7a16ae2a89056d196c24ec6b3e57daf}\label{classNetwork_1_1SafeQueue_ae7a16ae2a89056d196c24ec6b3e57daf}} 
+\mbox{\hyperlink{classNetwork_1_1SafeQueue_ae7a16ae2a89056d196c24ec6b3e57daf}{$\sim$\+Safe\+Queue}} ()=default
+\item 
+void \mbox{\hyperlink{classNetwork_1_1SafeQueue_a3b44a962e551a983da00eda2c365cfb0}{push}} (const Message\+Type \&msg)
+\item 
+void \mbox{\hyperlink{classNetwork_1_1SafeQueue_ac4a1e5de840ac4adeb81f69be23fd425}{pop}} ()
+\item 
+Message\+Type \& \mbox{\hyperlink{classNetwork_1_1SafeQueue_a5814bbd114840fe21c9074a54f4432cd}{front}} ()
+\item 
+bool \mbox{\hyperlink{classNetwork_1_1SafeQueue_a6b8ff0942418a58efe6f8749f3b9685e}{is\+Empty}} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Message\+Type$>$\newline
+class Network\+::\+Safe\+Queue$<$ Message\+Type $>$}
+
+The purpose of this class is to create a thread safe queue. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classNetwork_1_1SafeQueue_aca473fa5343287844286d895d4c529d3}\label{classNetwork_1_1SafeQueue_aca473fa5343287844286d895d4c529d3}} 
+\index{Network::SafeQueue$<$ MessageType $>$@{Network::SafeQueue$<$ MessageType $>$}!SafeQueue@{SafeQueue}}
+\index{SafeQueue@{SafeQueue}!Network::SafeQueue$<$ MessageType $>$@{Network::SafeQueue$<$ MessageType $>$}}
+\doxysubsubsection{\texorpdfstring{SafeQueue()}{SafeQueue()}}
+{\footnotesize\ttfamily template$<$typename Message\+Type $>$ \\
+\mbox{\hyperlink{classNetwork_1_1SafeQueue}{Network\+::\+Safe\+Queue}}$<$ Message\+Type $>$\+::\mbox{\hyperlink{classNetwork_1_1SafeQueue}{Safe\+Queue}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classNetwork_1_1SafeQueue}{Safe\+Queue}}$<$ Message\+Type $>$ \&}]{to\+\_\+copy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\mbox{\hyperlink{classNetwork_1_1SafeQueue}{Safe\+Queue}} copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em to\+\_\+copy} & the \mbox{\hyperlink{classNetwork_1_1SafeQueue}{Safe\+Queue}} to copy \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classNetwork_1_1SafeQueue_a5814bbd114840fe21c9074a54f4432cd}\label{classNetwork_1_1SafeQueue_a5814bbd114840fe21c9074a54f4432cd}} 
+\index{Network::SafeQueue$<$ MessageType $>$@{Network::SafeQueue$<$ MessageType $>$}!front@{front}}
+\index{front@{front}!Network::SafeQueue$<$ MessageType $>$@{Network::SafeQueue$<$ MessageType $>$}}
+\doxysubsubsection{\texorpdfstring{front()}{front()}}
+{\footnotesize\ttfamily template$<$typename Message\+Type $>$ \\
+Message\+Type\& \mbox{\hyperlink{classNetwork_1_1SafeQueue}{Network\+::\+Safe\+Queue}}$<$ Message\+Type $>$\+::front (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+front function 
+
+This function is used to get the first message in the queue. \begin{DoxyReturn}{Returns}
+the first message in the queue 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classNetwork_1_1SafeQueue_a6b8ff0942418a58efe6f8749f3b9685e}\label{classNetwork_1_1SafeQueue_a6b8ff0942418a58efe6f8749f3b9685e}} 
+\index{Network::SafeQueue$<$ MessageType $>$@{Network::SafeQueue$<$ MessageType $>$}!isEmpty@{isEmpty}}
+\index{isEmpty@{isEmpty}!Network::SafeQueue$<$ MessageType $>$@{Network::SafeQueue$<$ MessageType $>$}}
+\doxysubsubsection{\texorpdfstring{isEmpty()}{isEmpty()}}
+{\footnotesize\ttfamily template$<$typename Message\+Type $>$ \\
+bool \mbox{\hyperlink{classNetwork_1_1SafeQueue}{Network\+::\+Safe\+Queue}}$<$ Message\+Type $>$\+::is\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+is\+Empty function 
+
+This function is used to check if the queue is empty. \begin{DoxyReturn}{Returns}
+true if the queue is empty, false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classNetwork_1_1SafeQueue_ac4a1e5de840ac4adeb81f69be23fd425}\label{classNetwork_1_1SafeQueue_ac4a1e5de840ac4adeb81f69be23fd425}} 
+\index{Network::SafeQueue$<$ MessageType $>$@{Network::SafeQueue$<$ MessageType $>$}!pop@{pop}}
+\index{pop@{pop}!Network::SafeQueue$<$ MessageType $>$@{Network::SafeQueue$<$ MessageType $>$}}
+\doxysubsubsection{\texorpdfstring{pop()}{pop()}}
+{\footnotesize\ttfamily template$<$typename Message\+Type $>$ \\
+void \mbox{\hyperlink{classNetwork_1_1SafeQueue}{Network\+::\+Safe\+Queue}}$<$ Message\+Type $>$\+::pop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+pop function 
+
+This function is used to pop a message in the queue. \mbox{\Hypertarget{classNetwork_1_1SafeQueue_a3b44a962e551a983da00eda2c365cfb0}\label{classNetwork_1_1SafeQueue_a3b44a962e551a983da00eda2c365cfb0}} 
+\index{Network::SafeQueue$<$ MessageType $>$@{Network::SafeQueue$<$ MessageType $>$}!push@{push}}
+\index{push@{push}!Network::SafeQueue$<$ MessageType $>$@{Network::SafeQueue$<$ MessageType $>$}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}}
+{\footnotesize\ttfamily template$<$typename Message\+Type $>$ \\
+void \mbox{\hyperlink{classNetwork_1_1SafeQueue}{Network\+::\+Safe\+Queue}}$<$ Message\+Type $>$\+::push (\begin{DoxyParamCaption}\item[{const Message\+Type \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+push function 
+
+This function is used to push a message in the queue. 
+\begin{DoxyParams}{Parameters}
+{\em msg} & the message to push \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Lib/\+Network/include/safe\+\_\+queue.\+hpp\end{DoxyCompactItemize}

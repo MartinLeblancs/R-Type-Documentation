@@ -1,0 +1,215 @@
+Group Epitech R-Type
+Request for comments: undefined
+                                                                                   T. Fuller
+                                                                                    N. Varga
+                                                                                Janvier 2023
+                                R-Type Network Protocol
+
+Status of this Memo
+
+    This memo is the unofficial specification for the R-Type TCP and UDP protocols. R-Type
+    is a video game saga created by the company Irem in 1987.
+    Distribution of this memo is unlimited.
+
+Table of contents
+
+    1.   Introduction
+	1.a    Type definitions
+	1.b	   Commands list
+	1.c    Commands definitions
+    2.   R-Type architecture
+	2.a    Message payload
+    2.b    Connection protocol
+	3.	 Server update
+	3.a    Player event
+
+1. Introduction
+
+    The goal of the R-Type is to create a multiplayer part to the Game R-Type.
+    The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL, NOT", "SHOULD",
+    "SHOULD NOT", "RECOMMENDED",  "MAY", and "OPTIONAL" in this document are to
+    be interpreted as described in RFC 2119.
+
+1.a Type definitions
+
+	uint8_t: unsigned 8-bit integer
+	int8_t: 8-bit integer
+	uint16_t: unsigned 16-bit integer
+	uint32_t: unsigned 32-bit integer
+	char *: memory space
+	unsigned short int: unsigned 16-bit integer
+
+1.b Commands list
+
+	This enum class can be found in the /Lib/Network/include/codes.hpp
+
+	enum Codes {
+		HELLO_TCP = 0,
+		UDP_PORT = 1,
+		ID_PLAYER = 2,
+		HELLO_UDP = 3,
+		MOVE = 4,
+        UPDATE_ENTITIES = 5,
+		SHOOT = 6,
+		UNLOAD_ENTITY = 7,
+		DISCONNECT = 13
+	};
+	Figure 1.0
+
+1.c Commands definitions
+
+	command alias: HELLO_TCP
+	protocol: TCP
+	header_id: 0
+	size: 0 bytes
+	body:
+		none
+
+	command alias: UDP_PORT
+	protocol: TCP
+	header_id: 1
+	size: 2 bytes
+	body:
+		(unsigned short int) port: port number
+
+	command alias: ID_PLAYER
+	protocol: TCP
+	header_id: 2
+	size: 4 bytes
+	body:
+		(uint32_t) id: assigned id
+
+	command alias: HELLO_UDP
+	protocol: UDP
+	header_id: 3
+	size: 0 bytes
+	body:
+		none
+
+	command alias: MOVE
+	protocol: UDP
+	header_id: 4
+	size: 5 bytes
+	body:
+		(uint32_t) id: client id
+		(int8_t) direction: actions (Figure 1.1)
+
+	command alias: UPDATE_ENTITIES
+	protocol: UDP
+	header_id: 5
+	size: 11 bytes or 9 bytes
+	body:
+		(uint32_t) id: client id
+		(uint8_t) type: entity type
+		(uint16_t) x: x position of entity
+		(uint16_t) y: y position of entity
+		OPTIONAL (uint16_t) health: health of entity if entity has a health
+
+	command alias: SHOOT
+	protocol: UDP
+	header_id: 6
+	size: 4 bytes
+	body:
+		(uint32_t) id: client id
+
+	command alias: UNLOAD_ENTITY
+	protocol: UDP
+	header_id: 7
+	size: 4 bytes
+	body:
+		(uint32_t) id: entity id
+
+2. R-Type architecture
+
+
+                                                +--------------+
+                                                |              |
+        +----------+      tcp transmission      |              |
+        |          | <------------------------> |              |
+        |  client  |                            |    server    |
+        |          | <------------------------> |              |
+        +----------+      udp transmission      |              |
+                                                |              |
+                                                +--------------+
+
+													  Figure 2.0
+
+2.a Message payload
+
+	Every message send through UPD or TCP between the client or the server MUST
+	have this format:
+
+		struct MessageHeader {
+			int header_id;
+			uint32_t size;
+		}
+
+		struct Body {
+			struct MessageHeader;
+			char *body;
+		}
+
+	The MessageHeader structure represent the header of the message.
+	It contains the <header_id> attribut used to passe the command id to be
+	executed by the server or the client (Figure 1.0).
+	The <size> attribut is the number of bytes contained in the body.
+
+	The body of the message is binary encoded in chunks of uint8_t, so a uint32_t type is
+	spread in 4 uint8_t chunks. This type of implementation does not permite non standard
+	types.
+
+	If you are coding in c++ you can grab the /Lib/Network/include/message.hpp to have a full
+	exemple.
+
+2.b Connection protocol
+
+	The R-Type connection protocol is a 4 steps job, please read the 1.b part before reading
+	the next part.
+
+	The client connect to the server by sending a message with <header_id> equal
+	to HELLO_TCP (Figure 1.0), and <size> equal to 0, to notify the server
+	with a new connection.
+
+	The server respond to the client with <header_id> equal to UDP_PORT, the body contains the
+	port number to connect with the client udp socket.
+
+	The client then send through the udp protocol a package to the remote port obtained in the
+	last step, with a <header_id> equal to HELLO_UDP.
+
+	The server finaly when receiving the HELLO_UDP packet, send through the tcp protocol a
+	packet with <header_id> equal to ID_PLAYER. This step assign the id used by the server
+	to identify the client and close the connection protocol step.
+
+3. Server update
+
+	Please read the 1.c Commands definitions beforehand.
+
+	The server will send every 0,008 seconds, a batch of UPDATE_ENTITIES commands.
+	Each command update an entity with it's position, it's health if it has a health.
+	The id and the type of the entity is also sent to help the client recognise it.
+
+	The server handles the logic of the game, so the client is only here to display.
+
+3.a Player event
+
+	enum Actions {
+        MOVE_LEFT = 0,
+        MOVE_RIGHT = 1,
+        MOVE_UP = 2,
+        MOVE_DOWN = 3,
+        SHOOT = 4,
+        NOTHING = 5,
+    };
+
+	Here you have the actions id.
+
+	When a player press an arrow key for exemple it will send message with <header_id> set
+	to MOVE along with the entity_id and the direction constants that are set between MOVE_LEFT
+	and MOVE_DOWN. When the server receive the information it will update internaly the player
+	position and when the client will receive the update batch described in the last part, the
+	player position will be updated.
+
+	If a player press a key that shoot a rocket, a message with <header_id> equal to SHOOT will
+	be sent, and with the player id in the body.
+	The server will then create a new rocket entity and the client will receive in the next update
+	batch a new rocket entity.

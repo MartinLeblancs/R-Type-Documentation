@@ -1,0 +1,171 @@
+\hypertarget{classServer_1_1Lobby}{}\doxysection{Server\+::Lobby Class Reference}
+\label{classServer_1_1Lobby}\index{Server::Lobby@{Server::Lobby}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classServer_1_1Lobby_a25cda42e798c544eb391a1ea04fbbcf6}{Lobby}} (const unsigned short int \&port, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classNetwork_1_1SafeQueue}{Network\+::\+Safe\+Queue}}$<$ \mbox{\hyperlink{structNetwork_1_1Message}{Network\+::\+Message}}$<$ Thread\+::codes $>$$>$$>$ \&thread\+Msg\+Output)
+\item 
+\mbox{\Hypertarget{classServer_1_1Lobby_a3a244565546469335cb1a4dd4c9b087d}\label{classServer_1_1Lobby_a3a244565546469335cb1a4dd4c9b087d}} 
+\mbox{\hyperlink{classServer_1_1Lobby_a3a244565546469335cb1a4dd4c9b087d}{$\sim$\+Lobby}} ()
+\item 
+int \mbox{\hyperlink{classServer_1_1Lobby_a94045e9300db6dc9b824001bce571dff}{get\+Number\+Players}} () const
+\item 
+void \mbox{\hyperlink{classServer_1_1Lobby_abbef71cd2f444dee601bf76e301429c3}{send\+Message}} (const \mbox{\hyperlink{structNetwork_1_1Message}{Network\+::\+Message}}$<$ Thread\+::codes $>$ \&msg)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classServer_1_1Lobby_adc59a60226f3f068163dab56fa93c689}{get\+Id\+Last\+Player}} ()
+\item 
+std\+::string \mbox{\hyperlink{classServer_1_1Lobby_accab1b33303365dd3a23a5c1025c0757}{get\+Name}} () const
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classServer_1_1Lobby_a6a2645c35f7e29cf27be5c5169ec6a43}{get\+Uuid}} () const
+\item 
+unsigned short int \mbox{\hyperlink{classServer_1_1Lobby_a48097390e291da4b5cebe19ac93620ed}{get\+Port}} () const
+\item 
+void \mbox{\hyperlink{classServer_1_1Lobby_af572b1cb3564dbd5d80a380b45a00062}{get\+All\+Scores}} ()
+\item 
+void \mbox{\hyperlink{classServer_1_1Lobby_a218a482912b45c390fa37e639856c1e8}{send\+Score}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classServer_1_1Lobby_ad7fea3d0b559c2694f27bb65af8196f9}{\+\_\+score}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classServer_1_1Lobby_a25cda42e798c544eb391a1ea04fbbcf6}\label{classServer_1_1Lobby_a25cda42e798c544eb391a1ea04fbbcf6}} 
+\index{Server::Lobby@{Server::Lobby}!Lobby@{Lobby}}
+\index{Lobby@{Lobby}!Server::Lobby@{Server::Lobby}}
+\doxysubsubsection{\texorpdfstring{Lobby()}{Lobby()}}
+{\footnotesize\ttfamily Server\+::\+Lobby\+::\+Lobby (\begin{DoxyParamCaption}\item[{const unsigned short int \&}]{port,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classNetwork_1_1SafeQueue}{Network\+::\+Safe\+Queue}}$<$ \mbox{\hyperlink{structNetwork_1_1Message}{Network\+::\+Message}}$<$ Thread\+::codes $>$$>$$>$ \&}]{thread\+Msg\+Output }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classServer_1_1Lobby}{Lobby}} constructor. 
+
+Pass in parameter your entity\+Manager already created~\newline
+
+\begin{DoxyParams}{Parameters}
+{\em thread\+Msg\+Output} & The pointer on the Safe\+Queue class \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classServer_1_1Lobby_af572b1cb3564dbd5d80a380b45a00062}\label{classServer_1_1Lobby_af572b1cb3564dbd5d80a380b45a00062}} 
+\index{Server::Lobby@{Server::Lobby}!getAllScores@{getAllScores}}
+\index{getAllScores@{getAllScores}!Server::Lobby@{Server::Lobby}}
+\doxysubsubsection{\texorpdfstring{getAllScores()}{getAllScores()}}
+{\footnotesize\ttfamily void Server\+::\+Lobby\+::get\+All\+Scores (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+get\+All\+Scores function 
+
+get the scores of all the things that gave score (Power\+Up class, Ennemy class etc...) \mbox{\Hypertarget{classServer_1_1Lobby_adc59a60226f3f068163dab56fa93c689}\label{classServer_1_1Lobby_adc59a60226f3f068163dab56fa93c689}} 
+\index{Server::Lobby@{Server::Lobby}!getIdLastPlayer@{getIdLastPlayer}}
+\index{getIdLastPlayer@{getIdLastPlayer}!Server::Lobby@{Server::Lobby}}
+\doxysubsubsection{\texorpdfstring{getIdLastPlayer()}{getIdLastPlayer()}}
+{\footnotesize\ttfamily uint32\+\_\+t Server\+::\+Lobby\+::get\+Id\+Last\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+get\+Id\+Last\+Player function 
+
+Return the id of the last player \begin{DoxyReturn}{Returns}
+The id of the last player 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classServer_1_1Lobby_accab1b33303365dd3a23a5c1025c0757}\label{classServer_1_1Lobby_accab1b33303365dd3a23a5c1025c0757}} 
+\index{Server::Lobby@{Server::Lobby}!getName@{getName}}
+\index{getName@{getName}!Server::Lobby@{Server::Lobby}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily std\+::string Server\+::\+Lobby\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+get\+Name function 
+
+Return the name of the lobby \begin{DoxyReturn}{Returns}
+The name of the lobby 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classServer_1_1Lobby_a94045e9300db6dc9b824001bce571dff}\label{classServer_1_1Lobby_a94045e9300db6dc9b824001bce571dff}} 
+\index{Server::Lobby@{Server::Lobby}!getNumberPlayers@{getNumberPlayers}}
+\index{getNumberPlayers@{getNumberPlayers}!Server::Lobby@{Server::Lobby}}
+\doxysubsubsection{\texorpdfstring{getNumberPlayers()}{getNumberPlayers()}}
+{\footnotesize\ttfamily int Server\+::\+Lobby\+::get\+Number\+Players (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+get\+Number\+Players function 
+
+Return the number of players in the lobby \begin{DoxyReturn}{Returns}
+The number of players in the lobby 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classServer_1_1Lobby_a48097390e291da4b5cebe19ac93620ed}\label{classServer_1_1Lobby_a48097390e291da4b5cebe19ac93620ed}} 
+\index{Server::Lobby@{Server::Lobby}!getPort@{getPort}}
+\index{getPort@{getPort}!Server::Lobby@{Server::Lobby}}
+\doxysubsubsection{\texorpdfstring{getPort()}{getPort()}}
+{\footnotesize\ttfamily unsigned short int Server\+::\+Lobby\+::get\+Port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+get\+Port function 
+
+Return the port of the lobby \begin{DoxyReturn}{Returns}
+The port of the lobby 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classServer_1_1Lobby_a6a2645c35f7e29cf27be5c5169ec6a43}\label{classServer_1_1Lobby_a6a2645c35f7e29cf27be5c5169ec6a43}} 
+\index{Server::Lobby@{Server::Lobby}!getUuid@{getUuid}}
+\index{getUuid@{getUuid}!Server::Lobby@{Server::Lobby}}
+\doxysubsubsection{\texorpdfstring{getUuid()}{getUuid()}}
+{\footnotesize\ttfamily uint32\+\_\+t Server\+::\+Lobby\+::get\+Uuid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+get\+Uuid function 
+
+Return the uuid of the lobby \begin{DoxyReturn}{Returns}
+The uuid of the lobby 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classServer_1_1Lobby_abbef71cd2f444dee601bf76e301429c3}\label{classServer_1_1Lobby_abbef71cd2f444dee601bf76e301429c3}} 
+\index{Server::Lobby@{Server::Lobby}!sendMessage@{sendMessage}}
+\index{sendMessage@{sendMessage}!Server::Lobby@{Server::Lobby}}
+\doxysubsubsection{\texorpdfstring{sendMessage()}{sendMessage()}}
+{\footnotesize\ttfamily void Server\+::\+Lobby\+::send\+Message (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structNetwork_1_1Message}{Network\+::\+Message}}$<$ Thread\+::codes $>$ \&}]{msg }\end{DoxyParamCaption})}
+
+
+
+send\+Message function 
+
+Send a message to the client 
+\begin{DoxyParams}{Parameters}
+{\em msg} & The message to send \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classServer_1_1Lobby_a218a482912b45c390fa37e639856c1e8}\label{classServer_1_1Lobby_a218a482912b45c390fa37e639856c1e8}} 
+\index{Server::Lobby@{Server::Lobby}!sendScore@{sendScore}}
+\index{sendScore@{sendScore}!Server::Lobby@{Server::Lobby}}
+\doxysubsubsection{\texorpdfstring{sendScore()}{sendScore()}}
+{\footnotesize\ttfamily void Server\+::\+Lobby\+::send\+Score (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+send\+Score function 
+
+send the score to the client 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classServer_1_1Lobby_ad7fea3d0b559c2694f27bb65af8196f9}\label{classServer_1_1Lobby_ad7fea3d0b559c2694f27bb65af8196f9}} 
+\index{Server::Lobby@{Server::Lobby}!\_score@{\_score}}
+\index{\_score@{\_score}!Server::Lobby@{Server::Lobby}}
+\doxysubsubsection{\texorpdfstring{\_score}{\_score}}
+{\footnotesize\ttfamily uint32\+\_\+t Server\+::\+Lobby\+::\+\_\+score}
+
+
+
+\+\_\+score variable 
+
+The score of the lobby 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Server/include/Lobby.\+hpp\end{DoxyCompactItemize}

@@ -1,0 +1,169 @@
+\hypertarget{classGame_1_1Client}{}\doxysection{Game\+::Client Class Reference}
+\label{classGame_1_1Client}\index{Game::Client@{Game::Client}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGame_1_1Client_aa53f3dc2b15a68e9c9ddf54c4ac330ae}\label{classGame_1_1Client_aa53f3dc2b15a68e9c9ddf54c4ac330ae}} 
+{\bfseries Client} (const std\+::string \&host, const unsigned short int \&port)
+\item 
+int \mbox{\hyperlink{classGame_1_1Client_aa3fa0d5cb35e71cb2b003acf78ccacad}{start}} ()
+\item 
+void \mbox{\hyperlink{classGame_1_1Client_a1470a7c0d6d4914cadb235afa8a51044}{run}} ()
+\item 
+void \mbox{\hyperlink{classGame_1_1Client_ae9b6fd345c991d7272e743ffd08f37f5}{send\+Player\+Shoot}} ()
+\item 
+void \mbox{\hyperlink{classGame_1_1Client_a7570a87ebd2d68ea3ce0dc6d58a02655}{get\+Input}} ()
+\item 
+void \mbox{\hyperlink{classGame_1_1Client_ae9715b8a717ad2112715406fdebade77}{display}} ()
+\item 
+void \mbox{\hyperlink{classGame_1_1Client_a016a662b7ded7aa7f17ee5554d20ecec}{check\+Messages}} ()
+\item 
+int \mbox{\hyperlink{classGame_1_1Client_ab7fcfc06293568758032d0bf37de332a}{connect\+Data}} (Comb\+Owned\+Msg \&msg)
+\item 
+int \mbox{\hyperlink{classGame_1_1Client_a6ce51e705da3d3ea4568cdc64ff019dc}{set\+ID}} (Comb\+Owned\+Msg \&msg)
+\item 
+int \mbox{\hyperlink{classGame_1_1Client_a843592e785d21c2306dec03b75efb948}{update\+Score}} (Comb\+Owned\+Msg \&msg)
+\item 
+int \mbox{\hyperlink{classGame_1_1Client_a50a7aaeb11ccefef401e4bf734ef4188}{save\+Lobby\+List}} (Comb\+Owned\+Msg \&msg)
+\item 
+int \mbox{\hyperlink{classGame_1_1Client_a9bac24697f9e3d98fe14bdd6e7b2d79b}{save\+Player\+List}} (Comb\+Owned\+Msg \&owner)
+\item 
+int \mbox{\hyperlink{classGame_1_1Client_a0b0edeb0a49b0248b53d6f888183117d}{save\+TChat}} (Comb\+Owned\+Msg \&owner)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGame_1_1Client_ae27c01cc75e986391b880a228b8b83ac}\label{classGame_1_1Client_ae27c01cc75e986391b880a228b8b83ac}} 
+uint32\+\_\+t {\bfseries id}
+\item 
+\mbox{\Hypertarget{classGame_1_1Client_ab91b2e82d96241480642f659a9bec3a7}\label{classGame_1_1Client_ab91b2e82d96241480642f659a9bec3a7}} 
+uint32\+\_\+t {\bfseries \+\_\+score}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGame_1_1Client_a016a662b7ded7aa7f17ee5554d20ecec}\label{classGame_1_1Client_a016a662b7ded7aa7f17ee5554d20ecec}} 
+\index{Game::Client@{Game::Client}!checkMessages@{checkMessages}}
+\index{checkMessages@{checkMessages}!Game::Client@{Game::Client}}
+\doxysubsubsection{\texorpdfstring{checkMessages()}{checkMessages()}}
+{\footnotesize\ttfamily void Game\+::\+Client\+::check\+Messages (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+check\+Messages function 
+
+The function reroutes the incoming messages to the right function \mbox{\Hypertarget{classGame_1_1Client_ab7fcfc06293568758032d0bf37de332a}\label{classGame_1_1Client_ab7fcfc06293568758032d0bf37de332a}} 
+\index{Game::Client@{Game::Client}!connectData@{connectData}}
+\index{connectData@{connectData}!Game::Client@{Game::Client}}
+\doxysubsubsection{\texorpdfstring{connectData()}{connectData()}}
+{\footnotesize\ttfamily int Game\+::\+Client\+::connect\+Data (\begin{DoxyParamCaption}\item[{Comb\+Owned\+Msg \&}]{msg }\end{DoxyParamCaption})}
+
+
+
+connect\+Data function 
+
+The function passes the right parameter to start the mukltiplayer experience (UDP connection) \mbox{\Hypertarget{classGame_1_1Client_ae9715b8a717ad2112715406fdebade77}\label{classGame_1_1Client_ae9715b8a717ad2112715406fdebade77}} 
+\index{Game::Client@{Game::Client}!display@{display}}
+\index{display@{display}!Game::Client@{Game::Client}}
+\doxysubsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily void Game\+::\+Client\+::display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+display function 
+
+The function manages the diffrent display states of the game (also calles screens) \mbox{\Hypertarget{classGame_1_1Client_a7570a87ebd2d68ea3ce0dc6d58a02655}\label{classGame_1_1Client_a7570a87ebd2d68ea3ce0dc6d58a02655}} 
+\index{Game::Client@{Game::Client}!getInput@{getInput}}
+\index{getInput@{getInput}!Game::Client@{Game::Client}}
+\doxysubsubsection{\texorpdfstring{getInput()}{getInput()}}
+{\footnotesize\ttfamily void Game\+::\+Client\+::get\+Input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+get\+Input function 
+
+The function gets the incoming messages from the server \mbox{\Hypertarget{classGame_1_1Client_a1470a7c0d6d4914cadb235afa8a51044}\label{classGame_1_1Client_a1470a7c0d6d4914cadb235afa8a51044}} 
+\index{Game::Client@{Game::Client}!run@{run}}
+\index{run@{run}!Game::Client@{Game::Client}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void Game\+::\+Client\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+run function 
+
+Main gale loop where the incomming messages are checked and the screens are handled \mbox{\Hypertarget{classGame_1_1Client_a50a7aaeb11ccefef401e4bf734ef4188}\label{classGame_1_1Client_a50a7aaeb11ccefef401e4bf734ef4188}} 
+\index{Game::Client@{Game::Client}!saveLobbyList@{saveLobbyList}}
+\index{saveLobbyList@{saveLobbyList}!Game::Client@{Game::Client}}
+\doxysubsubsection{\texorpdfstring{saveLobbyList()}{saveLobbyList()}}
+{\footnotesize\ttfamily int Game\+::\+Client\+::save\+Lobby\+List (\begin{DoxyParamCaption}\item[{Comb\+Owned\+Msg \&}]{msg }\end{DoxyParamCaption})}
+
+
+
+save\+Lobby\+List function 
+
+The function gets all the lobbies from the server \mbox{\Hypertarget{classGame_1_1Client_a9bac24697f9e3d98fe14bdd6e7b2d79b}\label{classGame_1_1Client_a9bac24697f9e3d98fe14bdd6e7b2d79b}} 
+\index{Game::Client@{Game::Client}!savePlayerList@{savePlayerList}}
+\index{savePlayerList@{savePlayerList}!Game::Client@{Game::Client}}
+\doxysubsubsection{\texorpdfstring{savePlayerList()}{savePlayerList()}}
+{\footnotesize\ttfamily int Game\+::\+Client\+::save\+Player\+List (\begin{DoxyParamCaption}\item[{Comb\+Owned\+Msg \&}]{owner }\end{DoxyParamCaption})}
+
+
+
+save\+Player\+List function 
+
+The function gets all the players from the server \mbox{\Hypertarget{classGame_1_1Client_a0b0edeb0a49b0248b53d6f888183117d}\label{classGame_1_1Client_a0b0edeb0a49b0248b53d6f888183117d}} 
+\index{Game::Client@{Game::Client}!saveTChat@{saveTChat}}
+\index{saveTChat@{saveTChat}!Game::Client@{Game::Client}}
+\doxysubsubsection{\texorpdfstring{saveTChat()}{saveTChat()}}
+{\footnotesize\ttfamily int Game\+::\+Client\+::save\+TChat (\begin{DoxyParamCaption}\item[{Comb\+Owned\+Msg \&}]{owner }\end{DoxyParamCaption})}
+
+
+
+save\+TChat function 
+
+The function gets all the chat messages from the server \mbox{\Hypertarget{classGame_1_1Client_ae9b6fd345c991d7272e743ffd08f37f5}\label{classGame_1_1Client_ae9b6fd345c991d7272e743ffd08f37f5}} 
+\index{Game::Client@{Game::Client}!sendPlayerShoot@{sendPlayerShoot}}
+\index{sendPlayerShoot@{sendPlayerShoot}!Game::Client@{Game::Client}}
+\doxysubsubsection{\texorpdfstring{sendPlayerShoot()}{sendPlayerShoot()}}
+{\footnotesize\ttfamily void Game\+::\+Client\+::send\+Player\+Shoot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+send\+Player\+Shoot function 
+
+The function sends a message to the server that the player is shooting \mbox{\Hypertarget{classGame_1_1Client_a6ce51e705da3d3ea4568cdc64ff019dc}\label{classGame_1_1Client_a6ce51e705da3d3ea4568cdc64ff019dc}} 
+\index{Game::Client@{Game::Client}!setID@{setID}}
+\index{setID@{setID}!Game::Client@{Game::Client}}
+\doxysubsubsection{\texorpdfstring{setID()}{setID()}}
+{\footnotesize\ttfamily int Game\+::\+Client\+::set\+ID (\begin{DoxyParamCaption}\item[{Comb\+Owned\+Msg \&}]{msg }\end{DoxyParamCaption})}
+
+
+
+set\+ID function 
+
+The function sets the id of the player \mbox{\Hypertarget{classGame_1_1Client_aa3fa0d5cb35e71cb2b003acf78ccacad}\label{classGame_1_1Client_aa3fa0d5cb35e71cb2b003acf78ccacad}} 
+\index{Game::Client@{Game::Client}!start@{start}}
+\index{start@{start}!Game::Client@{Game::Client}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily int Game\+::\+Client\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+start function 
+
+The function will make the necessary calls to intialize the game client \mbox{\Hypertarget{classGame_1_1Client_a843592e785d21c2306dec03b75efb948}\label{classGame_1_1Client_a843592e785d21c2306dec03b75efb948}} 
+\index{Game::Client@{Game::Client}!updateScore@{updateScore}}
+\index{updateScore@{updateScore}!Game::Client@{Game::Client}}
+\doxysubsubsection{\texorpdfstring{updateScore()}{updateScore()}}
+{\footnotesize\ttfamily int Game\+::\+Client\+::update\+Score (\begin{DoxyParamCaption}\item[{Comb\+Owned\+Msg \&}]{msg }\end{DoxyParamCaption})}
+
+
+
+set\+Score function 
+
+The function sets the score of the player 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Client/include/client.\+hpp\end{DoxyCompactItemize}

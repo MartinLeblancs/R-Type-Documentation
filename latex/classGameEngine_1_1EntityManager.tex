@@ -1,0 +1,203 @@
+\hypertarget{classGameEngine_1_1EntityManager}{}\doxysection{Game\+Engine\+::Entity\+Manager Class Reference}
+\label{classGameEngine_1_1EntityManager}\index{GameEngine::EntityManager@{GameEngine::EntityManager}}
+
+
+{\ttfamily \#include $<$Entity\+Manager.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classGameEngine_1_1Entity}{Game\+Engine\+::\+Entity}} $>$ \mbox{\hyperlink{classGameEngine_1_1EntityManager_a1b8bc202361016c76c1e48e48abc5f9c}{Create\+Player}} (uint16\+\_\+t health=CONST\+\_\+\+HEALTH, uint16\+\_\+t damages=CONST\+\_\+\+DAMAGES, uint16\+\_\+t speed=CONST\+\_\+\+SPEED, const std\+::string \&path=\char`\"{}NULL\char`\"{}, Vector2 position=\{0, 0\}, int cooldown=CONST\+\_\+\+COOLDOWN)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classGameEngine_1_1Entity}{Game\+Engine\+::\+Entity}} $>$ \mbox{\hyperlink{classGameEngine_1_1EntityManager_a97d6a0da86b4bd0db7182e19d3e73bb5}{Create\+Enemy}} (uint16\+\_\+t health=CONST\+\_\+\+HEALTH, uint16\+\_\+t damages=CONST\+\_\+\+DAMAGES, int cooldown=CONST\+\_\+\+COOLDOWN, uint16\+\_\+t speed=CONST\+\_\+\+SPEED, const std\+::string \&path=\char`\"{}NULL\char`\"{}, Vector2 position=\{0, 0\})
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classGameEngine_1_1Entity}{Game\+Engine\+::\+Entity}} $>$ \mbox{\hyperlink{classGameEngine_1_1EntityManager_ade7313a20bc3c2d2c0a3630f58f3ec0f}{Create\+Rocket}} (uint16\+\_\+t damages=CONST\+\_\+\+DAMAGES, uint16\+\_\+t speed=CONST\+\_\+\+SPEED, const std\+::string \&path=\char`\"{}NULL\char`\"{}, Vector2 position=\{0, 0\}, bool friendly=false)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classGameEngine_1_1Entity}{Game\+Engine\+::\+Entity}} $>$ \mbox{\hyperlink{classGameEngine_1_1EntityManager_ae97e5b109bd582d5aa39933da8711688}{Create\+Power\+Up}} (uint16\+\_\+t speed=CONST\+\_\+\+SPEED, const std\+::string \&path=\char`\"{}NULL\char`\"{}, Vector2 position=\{0, 0\})
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classGameEngine_1_1Entity}{Game\+Engine\+::\+Entity}} $>$ \mbox{\hyperlink{classGameEngine_1_1EntityManager_a9407dd53dd3a80ca2ff809923d97ee24}{Create\+Wall}} (uint16\+\_\+t health=CONST\+\_\+\+HEALTH, uint16\+\_\+t damages=CONST\+\_\+\+DAMAGES, uint16\+\_\+t speed=CONST\+\_\+\+SPEED, const std\+::string \&path=\char`\"{}NULL\char`\"{}, Vector2 position=\{0, 0\})
+\item 
+void \mbox{\hyperlink{classGameEngine_1_1EntityManager_ac0e5c0502934fb97c632a487d6e82fd1}{pop\+Entity}} (int id)
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classGameEngine_1_1Entity}{Game\+Engine\+::\+Entity}} $>$ $>$ \mbox{\hyperlink{classGameEngine_1_1EntityManager_acb80492200149bcfdaed81999d002998}{get\+Entity\+List}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The purpose of this class is to have the list of all entities created in the game.~\newline
+The goal is also to be able to create new entities and store them in the same variable\+: \+\_\+entity\+List.~\newline
+Here we can create a Player \mbox{\hyperlink{classGameEngine_1_1Entity}{Entity}}, an Enemy \mbox{\hyperlink{classGameEngine_1_1Entity}{Entity}}, a Rocket \mbox{\hyperlink{classGameEngine_1_1Entity}{Entity}}.~\newline
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGameEngine_1_1EntityManager_a97d6a0da86b4bd0db7182e19d3e73bb5}\label{classGameEngine_1_1EntityManager_a97d6a0da86b4bd0db7182e19d3e73bb5}} 
+\index{GameEngine::EntityManager@{GameEngine::EntityManager}!CreateEnemy@{CreateEnemy}}
+\index{CreateEnemy@{CreateEnemy}!GameEngine::EntityManager@{GameEngine::EntityManager}}
+\doxysubsubsection{\texorpdfstring{CreateEnemy()}{CreateEnemy()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classGameEngine_1_1Entity}{Game\+Engine\+::\+Entity}}$>$ Game\+Engine\+::\+Entity\+Manager\+::\+Create\+Enemy (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{health = {\ttfamily CONST\+\_\+HEALTH},  }\item[{uint16\+\_\+t}]{damages = {\ttfamily CONST\+\_\+DAMAGES},  }\item[{int}]{cooldown = {\ttfamily CONST\+\_\+COOLDOWN},  }\item[{uint16\+\_\+t}]{speed = {\ttfamily CONST\+\_\+SPEED},  }\item[{const std\+::string \&}]{path = {\ttfamily \char`\"{}NULL\char`\"{}},  }\item[{Vector2}]{position = {\ttfamily \{0,~0\}} }\end{DoxyParamCaption})}
+
+
+
+Create\+Enemy function. 
+
+Create an Enemy entity~\newline
+You need to pass several informations on the components of this entity (health, Damages, Speed, Texture, Position, Cooldown)~\newline
+
+\begin{DoxyParams}{Parameters}
+{\em health} & the health of the player \\
+\hline
+{\em damages} & the damages of the player \\
+\hline
+{\em speed} & the speed of the player \\
+\hline
+{\em path} & the path of the texture of the player \\
+\hline
+{\em position} & the position of the player \\
+\hline
+{\em cooldown} & the cooldown for the shoot of the player \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGameEngine_1_1EntityManager_a1b8bc202361016c76c1e48e48abc5f9c}\label{classGameEngine_1_1EntityManager_a1b8bc202361016c76c1e48e48abc5f9c}} 
+\index{GameEngine::EntityManager@{GameEngine::EntityManager}!CreatePlayer@{CreatePlayer}}
+\index{CreatePlayer@{CreatePlayer}!GameEngine::EntityManager@{GameEngine::EntityManager}}
+\doxysubsubsection{\texorpdfstring{CreatePlayer()}{CreatePlayer()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classGameEngine_1_1Entity}{Game\+Engine\+::\+Entity}}$>$ Game\+Engine\+::\+Entity\+Manager\+::\+Create\+Player (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{health = {\ttfamily CONST\+\_\+HEALTH},  }\item[{uint16\+\_\+t}]{damages = {\ttfamily CONST\+\_\+DAMAGES},  }\item[{uint16\+\_\+t}]{speed = {\ttfamily CONST\+\_\+SPEED},  }\item[{const std\+::string \&}]{path = {\ttfamily \char`\"{}NULL\char`\"{}},  }\item[{Vector2}]{position = {\ttfamily \{0,~0\}},  }\item[{int}]{cooldown = {\ttfamily CONST\+\_\+COOLDOWN} }\end{DoxyParamCaption})}
+
+
+
+Create\+Player function. 
+
+Create a Player entity~\newline
+You need to pass several informations on the components of this entity (health, Damages, Speed, Texture, Position)~\newline
+
+\begin{DoxyParams}{Parameters}
+{\em health} & the health of the player \\
+\hline
+{\em damages} & the damages of the player \\
+\hline
+{\em speed} & the speed of the player \\
+\hline
+{\em path} & the path of the texture of the player \\
+\hline
+{\em position} & the position of the player \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGameEngine_1_1EntityManager_ae97e5b109bd582d5aa39933da8711688}\label{classGameEngine_1_1EntityManager_ae97e5b109bd582d5aa39933da8711688}} 
+\index{GameEngine::EntityManager@{GameEngine::EntityManager}!CreatePowerUp@{CreatePowerUp}}
+\index{CreatePowerUp@{CreatePowerUp}!GameEngine::EntityManager@{GameEngine::EntityManager}}
+\doxysubsubsection{\texorpdfstring{CreatePowerUp()}{CreatePowerUp()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classGameEngine_1_1Entity}{Game\+Engine\+::\+Entity}}$>$ Game\+Engine\+::\+Entity\+Manager\+::\+Create\+Power\+Up (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{speed = {\ttfamily CONST\+\_\+SPEED},  }\item[{const std\+::string \&}]{path = {\ttfamily \char`\"{}NULL\char`\"{}},  }\item[{Vector2}]{position = {\ttfamily \{0,~0\}} }\end{DoxyParamCaption})}
+
+
+
+Create\+Power\+Up function. 
+
+Create a Power\+Up entity~\newline
+You need to pass several informations on the components of this entity (health, Damages, Speed, Texture, Position)~\newline
+
+\begin{DoxyParams}{Parameters}
+{\em health} & the health of the player \\
+\hline
+{\em damages} & the damages of the player \\
+\hline
+{\em speed} & the speed of the player \\
+\hline
+{\em path} & the path of the texture of the player \\
+\hline
+{\em position} & the position of the player \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGameEngine_1_1EntityManager_ade7313a20bc3c2d2c0a3630f58f3ec0f}\label{classGameEngine_1_1EntityManager_ade7313a20bc3c2d2c0a3630f58f3ec0f}} 
+\index{GameEngine::EntityManager@{GameEngine::EntityManager}!CreateRocket@{CreateRocket}}
+\index{CreateRocket@{CreateRocket}!GameEngine::EntityManager@{GameEngine::EntityManager}}
+\doxysubsubsection{\texorpdfstring{CreateRocket()}{CreateRocket()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classGameEngine_1_1Entity}{Game\+Engine\+::\+Entity}}$>$ Game\+Engine\+::\+Entity\+Manager\+::\+Create\+Rocket (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{damages = {\ttfamily CONST\+\_\+DAMAGES},  }\item[{uint16\+\_\+t}]{speed = {\ttfamily CONST\+\_\+SPEED},  }\item[{const std\+::string \&}]{path = {\ttfamily \char`\"{}NULL\char`\"{}},  }\item[{Vector2}]{position = {\ttfamily \{0,~0\}},  }\item[{bool}]{friendly = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Create\+Rocket function. 
+
+Create a Rocket entity~\newline
+You need to pass several informations on the components of this entity (Damages, Speed, Cooldown, Texture, Position)~\newline
+
+\begin{DoxyParams}{Parameters}
+{\em damages} & the damages of the player \\
+\hline
+{\em speed} & the speed of the player \\
+\hline
+{\em cooldown} & the cooldown of the shoot of the player \\
+\hline
+{\em path} & the path of the texture of the player \\
+\hline
+{\em position} & the position of the player \\
+\hline
+{\em friendly} & the position of the player \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGameEngine_1_1EntityManager_a9407dd53dd3a80ca2ff809923d97ee24}\label{classGameEngine_1_1EntityManager_a9407dd53dd3a80ca2ff809923d97ee24}} 
+\index{GameEngine::EntityManager@{GameEngine::EntityManager}!CreateWall@{CreateWall}}
+\index{CreateWall@{CreateWall}!GameEngine::EntityManager@{GameEngine::EntityManager}}
+\doxysubsubsection{\texorpdfstring{CreateWall()}{CreateWall()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classGameEngine_1_1Entity}{Game\+Engine\+::\+Entity}}$>$ Game\+Engine\+::\+Entity\+Manager\+::\+Create\+Wall (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{health = {\ttfamily CONST\+\_\+HEALTH},  }\item[{uint16\+\_\+t}]{damages = {\ttfamily CONST\+\_\+DAMAGES},  }\item[{uint16\+\_\+t}]{speed = {\ttfamily CONST\+\_\+SPEED},  }\item[{const std\+::string \&}]{path = {\ttfamily \char`\"{}NULL\char`\"{}},  }\item[{Vector2}]{position = {\ttfamily \{0,~0\}} }\end{DoxyParamCaption})}
+
+
+
+Create\+Wall function. 
+
+Create a Wall entity~\newline
+You need to pass several informations on the components of this entity (health, Damages, Speed, Texture, Position)~\newline
+
+\begin{DoxyParams}{Parameters}
+{\em health} & the health of the player \\
+\hline
+{\em damages} & the damages of the player \\
+\hline
+{\em speed} & the speed of the player \\
+\hline
+{\em path} & the path of the texture of the player \\
+\hline
+{\em position} & the position of the player \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGameEngine_1_1EntityManager_acb80492200149bcfdaed81999d002998}\label{classGameEngine_1_1EntityManager_acb80492200149bcfdaed81999d002998}} 
+\index{GameEngine::EntityManager@{GameEngine::EntityManager}!getEntityList@{getEntityList}}
+\index{getEntityList@{getEntityList}!GameEngine::EntityManager@{GameEngine::EntityManager}}
+\doxysubsubsection{\texorpdfstring{getEntityList()}{getEntityList()}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classGameEngine_1_1Entity}{Game\+Engine\+::\+Entity}}$>$ $>$ Game\+Engine\+::\+Entity\+Manager\+::get\+Entity\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+get\+Entity\+List function 
+
+get the variable \+\_\+entity\+List~\newline
+
+\begin{DoxyParams}{Parameters}
+{\em no} & parameters needed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the variable \+\_\+entity\+List 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameEngine_1_1EntityManager_ac0e5c0502934fb97c632a487d6e82fd1}\label{classGameEngine_1_1EntityManager_ac0e5c0502934fb97c632a487d6e82fd1}} 
+\index{GameEngine::EntityManager@{GameEngine::EntityManager}!popEntity@{popEntity}}
+\index{popEntity@{popEntity}!GameEngine::EntityManager@{GameEngine::EntityManager}}
+\doxysubsubsection{\texorpdfstring{popEntity()}{popEntity()}}
+{\footnotesize\ttfamily void Game\+Engine\+::\+Entity\+Manager\+::pop\+Entity (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+pop\+Entity function 
+
+Pop an \mbox{\hyperlink{classGameEngine_1_1Entity}{Entity}} in the \+\_\+entity\+List~\newline
+Find an entity by ID and then remove it.~\newline
+It can be usefull when an entity die, you can remove it quickly~\newline
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the id of the entity you want to removep \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Lib/\+Game\+Engine/include/\+Entity/Entity\+Manager.\+hpp\end{DoxyCompactItemize}

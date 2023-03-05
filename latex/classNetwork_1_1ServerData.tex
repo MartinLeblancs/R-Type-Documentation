@@ -1,0 +1,110 @@
+\hypertarget{classNetwork_1_1ServerData}{}\doxysection{Network\+::Server\+Data$<$ T $>$ Class Template Reference}
+\label{classNetwork_1_1ServerData}\index{Network::ServerData$<$ T $>$@{Network::ServerData$<$ T $>$}}
+Inheritance diagram for Network\+::Server\+Data$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classNetwork_1_1ServerData}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classNetwork_1_1ServerData_aaa48473a4c0f47db3a9726928277de83}\label{classNetwork_1_1ServerData_aaa48473a4c0f47db3a9726928277de83}} 
+{\bfseries Server\+Data} (const std\+::string \&host, const unsigned short int \&port, const unsigned short int \&max\+Client=4)
+\item 
+\mbox{\Hypertarget{classNetwork_1_1ServerData_a292a142b6035d79d7a78e0015aa40228}\label{classNetwork_1_1ServerData_a292a142b6035d79d7a78e0015aa40228}} 
+void {\bfseries stop} ()
+\item 
+\mbox{\Hypertarget{classNetwork_1_1ServerData_ac1ad2a3e367f8e1bacd542681dc58fd3}\label{classNetwork_1_1ServerData_ac1ad2a3e367f8e1bacd542681dc58fd3}} 
+{\bfseries Server\+Data} (const \mbox{\hyperlink{classNetwork_1_1ServerData}{Server\+Data}} \&)=delete
+\item 
+void \mbox{\hyperlink{classNetwork_1_1ServerData_acb9cf19cb08f3cb4a4c9ff9f1ebc308d}{wait\+Connection}} () override
+\item 
+void \mbox{\hyperlink{classNetwork_1_1ServerData_ae1758f11726fd4c640b659536fd578cb}{send}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classNetwork_1_1ConnectionUDP}{Connection\+UDP}}$<$ T $>$$>$ \&client, const \mbox{\hyperlink{structNetwork_1_1Message}{Message}}$<$ T $>$ \&msg)
+\item 
+\mbox{\Hypertarget{classNetwork_1_1ServerData_a6639dc32685b00d6ef9fba65dd0771b6}\label{classNetwork_1_1ServerData_a6639dc32685b00d6ef9fba65dd0771b6}} 
+void {\bfseries append\+\_\+client} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classNetwork_1_1ConnectionUDP}{Connection\+UDP}}$<$ T $>$$>$ client)
+\item 
+\mbox{\Hypertarget{classNetwork_1_1ServerData_ac4de485252107f2f12e63a992a2cc54d}\label{classNetwork_1_1ServerData_ac4de485252107f2f12e63a992a2cc54d}} 
+void {\bfseries notifiy\+Clients} (const \mbox{\hyperlink{structNetwork_1_1Message}{Message}}$<$ T $>$ \&msg)
+\item 
+void \mbox{\hyperlink{classNetwork_1_1ServerData_adb4a9f32afcd07a1252823174c09716e}{remove\+\_\+client}} (const uint32\+\_\+t \&id)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classNetwork_1_1SafeQueue}{Network\+::\+Safe\+Queue}}$<$ \mbox{\hyperlink{structNetwork_1_1OwnedMessage}{Network\+::\+Owned\+Message}}$<$ \mbox{\hyperlink{classNetwork_1_1ConnectionUDP}{Network\+::\+Connection\+UDP}}$<$ T $>$, T $>$ $>$ $>$ \& \mbox{\hyperlink{classNetwork_1_1ServerData_aaa8f5f66a2e61a47f22e7c4539564ae0}{get\+Client\+Msg}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classNetwork_1_1ServerData_aaa8f5f66a2e61a47f22e7c4539564ae0}\label{classNetwork_1_1ServerData_aaa8f5f66a2e61a47f22e7c4539564ae0}} 
+\index{Network::ServerData$<$ T $>$@{Network::ServerData$<$ T $>$}!getClientMsg@{getClientMsg}}
+\index{getClientMsg@{getClientMsg}!Network::ServerData$<$ T $>$@{Network::ServerData$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getClientMsg()}{getClientMsg()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classNetwork_1_1SafeQueue}{Network\+::\+Safe\+Queue}}$<$\mbox{\hyperlink{structNetwork_1_1OwnedMessage}{Network\+::\+Owned\+Message}}$<$\mbox{\hyperlink{classNetwork_1_1ConnectionUDP}{Network\+::\+Connection\+UDP}}$<$T$>$, T$>$ $>$ $>$\& \mbox{\hyperlink{classNetwork_1_1ServerData}{Network\+::\+Server\+Data}}$<$ T $>$\+::get\+Client\+Msg (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+Client\+Msg function 
+
+This function is used to get the client message queue \begin{DoxyReturn}{Returns}
+the client message queue 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classNetwork_1_1ServerData_adb4a9f32afcd07a1252823174c09716e}\label{classNetwork_1_1ServerData_adb4a9f32afcd07a1252823174c09716e}} 
+\index{Network::ServerData$<$ T $>$@{Network::ServerData$<$ T $>$}!remove\_client@{remove\_client}}
+\index{remove\_client@{remove\_client}!Network::ServerData$<$ T $>$@{Network::ServerData$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{remove\_client()}{remove\_client()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classNetwork_1_1ServerData}{Network\+::\+Server\+Data}}$<$ T $>$\+::remove\+\_\+client (\begin{DoxyParamCaption}\item[{const uint32\+\_\+t \&}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+remove\+\_\+client 
+
+This function remove the client with it\textquotesingle{}s id equal to id parameter 
+\begin{DoxyParams}{Parameters}
+{\em id} & the id of the client to remove \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classNetwork_1_1ServerIT_a86ab2cda18abc45345161033ab9ba49b}{Network\+::\+Server\+IT$<$ T $>$}}.
+
+\mbox{\Hypertarget{classNetwork_1_1ServerData_ae1758f11726fd4c640b659536fd578cb}\label{classNetwork_1_1ServerData_ae1758f11726fd4c640b659536fd578cb}} 
+\index{Network::ServerData$<$ T $>$@{Network::ServerData$<$ T $>$}!send@{send}}
+\index{send@{send}!Network::ServerData$<$ T $>$@{Network::ServerData$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{send()}{send()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classNetwork_1_1ServerData}{Network\+::\+Server\+Data}}$<$ T $>$\+::send (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classNetwork_1_1ConnectionUDP}{Connection\+UDP}}$<$ T $>$$>$ \&}]{client,  }\item[{const \mbox{\hyperlink{structNetwork_1_1Message}{Message}}$<$ T $>$ \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+send function 
+
+This function is used to send data a client 
+\begin{DoxyParams}{Parameters}
+{\em client} & the client to send the data \\
+\hline
+{\em msg} & the message to send \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classNetwork_1_1ServerData_acb9cf19cb08f3cb4a4c9ff9f1ebc308d}\label{classNetwork_1_1ServerData_acb9cf19cb08f3cb4a4c9ff9f1ebc308d}} 
+\index{Network::ServerData$<$ T $>$@{Network::ServerData$<$ T $>$}!waitConnection@{waitConnection}}
+\index{waitConnection@{waitConnection}!Network::ServerData$<$ T $>$@{Network::ServerData$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{waitConnection()}{waitConnection()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classNetwork_1_1ServerData}{Network\+::\+Server\+Data}}$<$ T $>$\+::wait\+Connection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+wait\+Connection function 
+
+This function is used to wait for a client to connect 
+
+Reimplemented from \mbox{\hyperlink{classNetwork_1_1ServerIT_a8e648582bef8035eb05a9250f2d3e4a6}{Network\+::\+Server\+IT$<$ T $>$}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Lib/\+Network/include/server\+\_\+it.\+hpp\end{DoxyCompactItemize}

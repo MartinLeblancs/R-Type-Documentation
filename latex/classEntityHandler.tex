@@ -1,0 +1,85 @@
+\hypertarget{classEntityHandler}{}\doxysection{Entity\+Handler Class Reference}
+\label{classEntityHandler}\index{EntityHandler@{EntityHandler}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classGameEngine_1_1EntityManager}{Game\+Engine\+::\+Entity\+Manager}} $>$ \& \mbox{\hyperlink{classEntityHandler_ae38b026c281bb9282769d26aa8293d41}{get\+Entities}} ()
+\item 
+int \mbox{\hyperlink{classEntityHandler_a5177acef42ab31592b084f0cddc1fc02}{update\+Entity}} (Comb\+Owned\+Msg \&owner)
+\item 
+int \mbox{\hyperlink{classEntityHandler_a3006e64a3a8e4f8963093335b59f2224}{remove\+Entity}} (Comb\+Owned\+Msg \&owner)
+\item 
+void \mbox{\hyperlink{classEntityHandler_af3c9d45c1470f325266ab7170ace4c32}{remove\+Entity\+Id}} (const uint32\+\_\+t \&id)
+\item 
+int \mbox{\hyperlink{classEntityHandler_a25d1b503f10bca88ddfb7f9cceee25de}{move\+Entity}} (Comb\+Owned\+Msg \&owner)
+\item 
+void \mbox{\hyperlink{classEntityHandler_aaf1a0bd41116b2bffc1e11f16d2ac42d}{pre\+Load\+Textures}} (const std\+::string \&player\+Skin, const std\+::string \&enemy\+Skin)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classEntityHandler_ae38b026c281bb9282769d26aa8293d41}\label{classEntityHandler_ae38b026c281bb9282769d26aa8293d41}} 
+\index{EntityHandler@{EntityHandler}!getEntities@{getEntities}}
+\index{getEntities@{getEntities}!EntityHandler@{EntityHandler}}
+\doxysubsubsection{\texorpdfstring{getEntities()}{getEntities()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classGameEngine_1_1EntityManager}{Game\+Engine\+::\+Entity\+Manager}}$>$\& Entity\+Handler\+::get\+Entities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+Entities function 
+
+The function is a getter for the avaible entities \mbox{\Hypertarget{classEntityHandler_a25d1b503f10bca88ddfb7f9cceee25de}\label{classEntityHandler_a25d1b503f10bca88ddfb7f9cceee25de}} 
+\index{EntityHandler@{EntityHandler}!moveEntity@{moveEntity}}
+\index{moveEntity@{moveEntity}!EntityHandler@{EntityHandler}}
+\doxysubsubsection{\texorpdfstring{moveEntity()}{moveEntity()}}
+{\footnotesize\ttfamily int Entity\+Handler\+::move\+Entity (\begin{DoxyParamCaption}\item[{Comb\+Owned\+Msg \&}]{owner }\end{DoxyParamCaption})}
+
+
+
+move\+Entity function 
+
+The function moves a given entity to a given position \mbox{\Hypertarget{classEntityHandler_aaf1a0bd41116b2bffc1e11f16d2ac42d}\label{classEntityHandler_aaf1a0bd41116b2bffc1e11f16d2ac42d}} 
+\index{EntityHandler@{EntityHandler}!preLoadTextures@{preLoadTextures}}
+\index{preLoadTextures@{preLoadTextures}!EntityHandler@{EntityHandler}}
+\doxysubsubsection{\texorpdfstring{preLoadTextures()}{preLoadTextures()}}
+{\footnotesize\ttfamily void Entity\+Handler\+::pre\+Load\+Textures (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{player\+Skin,  }\item[{const std\+::string \&}]{enemy\+Skin }\end{DoxyParamCaption})}
+
+
+
+pre\+Load\+Textures function 
+
+The function is used to load the textures before the displaying starts \mbox{\Hypertarget{classEntityHandler_a3006e64a3a8e4f8963093335b59f2224}\label{classEntityHandler_a3006e64a3a8e4f8963093335b59f2224}} 
+\index{EntityHandler@{EntityHandler}!removeEntity@{removeEntity}}
+\index{removeEntity@{removeEntity}!EntityHandler@{EntityHandler}}
+\doxysubsubsection{\texorpdfstring{removeEntity()}{removeEntity()}}
+{\footnotesize\ttfamily int Entity\+Handler\+::remove\+Entity (\begin{DoxyParamCaption}\item[{Comb\+Owned\+Msg \&}]{owner }\end{DoxyParamCaption})}
+
+
+
+remove\+Entity function 
+
+The function removes a given entity \mbox{\Hypertarget{classEntityHandler_af3c9d45c1470f325266ab7170ace4c32}\label{classEntityHandler_af3c9d45c1470f325266ab7170ace4c32}} 
+\index{EntityHandler@{EntityHandler}!removeEntityId@{removeEntityId}}
+\index{removeEntityId@{removeEntityId}!EntityHandler@{EntityHandler}}
+\doxysubsubsection{\texorpdfstring{removeEntityId()}{removeEntityId()}}
+{\footnotesize\ttfamily void Entity\+Handler\+::remove\+Entity\+Id (\begin{DoxyParamCaption}\item[{const uint32\+\_\+t \&}]{id }\end{DoxyParamCaption})}
+
+
+
+remove\+Entity\+Id function 
+
+The function removes a given entity \mbox{\Hypertarget{classEntityHandler_a5177acef42ab31592b084f0cddc1fc02}\label{classEntityHandler_a5177acef42ab31592b084f0cddc1fc02}} 
+\index{EntityHandler@{EntityHandler}!updateEntity@{updateEntity}}
+\index{updateEntity@{updateEntity}!EntityHandler@{EntityHandler}}
+\doxysubsubsection{\texorpdfstring{updateEntity()}{updateEntity()}}
+{\footnotesize\ttfamily int Entity\+Handler\+::update\+Entity (\begin{DoxyParamCaption}\item[{Comb\+Owned\+Msg \&}]{owner }\end{DoxyParamCaption})}
+
+
+
+update\+Entity function 
+
+The function updates the entity 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Client/include/entity\+Handler.\+hpp\end{DoxyCompactItemize}

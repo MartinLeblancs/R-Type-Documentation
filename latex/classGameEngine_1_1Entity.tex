@@ -1,0 +1,139 @@
+\hypertarget{classGameEngine_1_1Entity}{}\doxysection{Game\+Engine\+::Entity Class Reference}
+\label{classGameEngine_1_1Entity}\index{GameEngine::Entity@{GameEngine::Entity}}
+
+
+{\ttfamily \#include $<$Entity.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGameEngine_1_1Entity_a3738630344138c62f141bd68212c4e22}{Entity}} (int id)
+\item 
+\mbox{\hyperlink{classGameEngine_1_1Entity_a6d0f939d6d44667d3c71ab10ca4f5172}{$\sim$\+Entity}} ()
+\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{classGameEngine_1_1Entity_a90e787667b04ac6f576f963490fe15c8}{add\+Comp}} (std\+::shared\+\_\+ptr$<$ T $>$ \&Component)
+\item 
+{\footnotesize template$<$class T $>$ }\\std\+::shared\+\_\+ptr$<$ T $>$ \mbox{\hyperlink{classGameEngine_1_1Entity_ad41cebe29f72a6af8351222eb6c42f15}{get\+Comp}} ()
+\item 
+{\footnotesize template$<$class T $>$ }\\bool \mbox{\hyperlink{classGameEngine_1_1Entity_a6fc04dde4680bc309082d3c686e0d3b4}{has\+Comp}} () noexcept
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Game\+Engine\+::\+Entity\+Type \mbox{\hyperlink{classGameEngine_1_1Entity_a53cae30d35e4e506bd08ca759494ba36}{\+\_\+type}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classGameEngine_1_1Entity_ab94e2fb2ccb96812015548f3cf1126fa}{\+\_\+id}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The purpose of this class is to manage the components of an \mbox{\hyperlink{classGameEngine_1_1Entity}{Entity}}.~\newline
+In this class we can add new components in order to personalize an \mbox{\hyperlink{classGameEngine_1_1Entity}{Entity}}~\newline
+The goal is also to be able to store the components of this entity in\+: \+\_\+component\+List.~\newline
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGameEngine_1_1Entity_a3738630344138c62f141bd68212c4e22}\label{classGameEngine_1_1Entity_a3738630344138c62f141bd68212c4e22}} 
+\index{GameEngine::Entity@{GameEngine::Entity}!Entity@{Entity}}
+\index{Entity@{Entity}!GameEngine::Entity@{GameEngine::Entity}}
+\doxysubsubsection{\texorpdfstring{Entity()}{Entity()}}
+{\footnotesize\ttfamily Game\+Engine\+::\+Entity\+::\+Entity (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classGameEngine_1_1Entity}{Entity}} constructor. 
+
+The constructor \mbox{\hyperlink{classGameEngine_1_1Entity}{Entity}}~\newline
+Here we just need an ID that gonna be store in this class. This ID need to IDentify the \mbox{\hyperlink{classGameEngine_1_1Entity}{Entity}}~\newline
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the ID of the \mbox{\hyperlink{classGameEngine_1_1Entity}{Entity}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGameEngine_1_1Entity_a6d0f939d6d44667d3c71ab10ca4f5172}\label{classGameEngine_1_1Entity_a6d0f939d6d44667d3c71ab10ca4f5172}} 
+\index{GameEngine::Entity@{GameEngine::Entity}!````~Entity@{$\sim$Entity}}
+\index{````~Entity@{$\sim$Entity}!GameEngine::Entity@{GameEngine::Entity}}
+\doxysubsubsection{\texorpdfstring{$\sim$Entity()}{~Entity()}}
+{\footnotesize\ttfamily Game\+Engine\+::\+Entity\+::$\sim$\+Entity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+$\sim$\+Entity destructor 
+
+The destructor \mbox{\hyperlink{classGameEngine_1_1Entity}{Entity}}~\newline
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGameEngine_1_1Entity_a90e787667b04ac6f576f963490fe15c8}\label{classGameEngine_1_1Entity_a90e787667b04ac6f576f963490fe15c8}} 
+\index{GameEngine::Entity@{GameEngine::Entity}!addComp@{addComp}}
+\index{addComp@{addComp}!GameEngine::Entity@{GameEngine::Entity}}
+\doxysubsubsection{\texorpdfstring{addComp()}{addComp()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void Game\+Engine\+::\+Entity\+::add\+Comp (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ T $>$ \&}]{Component }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+add\+Comp function 
+
+Add a component to this \mbox{\hyperlink{classGameEngine_1_1Entity}{Entity}}~\newline
+You can add a new Health component like this for example (look Entity\+Manager.\+cpp)~\newline
+The component\+: std\+::shared\+\_\+ptr$<$\+Game\+Engine\+::\+Damages$>$ damages\+Component = std\+::make\+\_\+shared$<$\+Game\+Engine\+::\+Damages$>$(damages)~\newline
+Add the component\+: player\+Entity-\/$>$add\+Comp$<$\+Game\+Engine\+::\+Health$>$(health\+Component)~\newline
+\mbox{\Hypertarget{classGameEngine_1_1Entity_ad41cebe29f72a6af8351222eb6c42f15}\label{classGameEngine_1_1Entity_ad41cebe29f72a6af8351222eb6c42f15}} 
+\index{GameEngine::Entity@{GameEngine::Entity}!getComp@{getComp}}
+\index{getComp@{getComp}!GameEngine::Entity@{GameEngine::Entity}}
+\doxysubsubsection{\texorpdfstring{getComp()}{getComp()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+std\+::shared\+\_\+ptr$<$T$>$ Game\+Engine\+::\+Entity\+::get\+Comp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+Comp function 
+
+Get a component (to then retrieve his value)~\newline
+It return a shared pointer on this component.~\newline
+You can retrieve the value of the Health Component like this\+: ENTITY-\/$>$\mbox{\hyperlink{classGameEngine_1_1Entity_ad41cebe29f72a6af8351222eb6c42f15}{get\+Comp$<$\+Game\+Engine\+::\+Health$>$()}}-\/$>$\+\_\+health~\newline
+\mbox{\Hypertarget{classGameEngine_1_1Entity_a6fc04dde4680bc309082d3c686e0d3b4}\label{classGameEngine_1_1Entity_a6fc04dde4680bc309082d3c686e0d3b4}} 
+\index{GameEngine::Entity@{GameEngine::Entity}!hasComp@{hasComp}}
+\index{hasComp@{hasComp}!GameEngine::Entity@{GameEngine::Entity}}
+\doxysubsubsection{\texorpdfstring{hasComp()}{hasComp()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool Game\+Engine\+::\+Entity\+::has\+Comp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+has\+Comp function 
+
+Check if this \mbox{\hyperlink{classGameEngine_1_1Entity}{Entity}} have a component~\newline
+It return a boolean~\newline
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classGameEngine_1_1Entity_ab94e2fb2ccb96812015548f3cf1126fa}\label{classGameEngine_1_1Entity_ab94e2fb2ccb96812015548f3cf1126fa}} 
+\index{GameEngine::Entity@{GameEngine::Entity}!\_id@{\_id}}
+\index{\_id@{\_id}!GameEngine::Entity@{GameEngine::Entity}}
+\doxysubsubsection{\texorpdfstring{\_id}{\_id}}
+{\footnotesize\ttfamily uint32\+\_\+t Game\+Engine\+::\+Entity\+::\+\_\+id}
+
+
+
+\+\_\+id variable 
+
+The identifier integer of this \mbox{\hyperlink{classGameEngine_1_1Entity}{Entity}}~\newline
+\mbox{\Hypertarget{classGameEngine_1_1Entity_a53cae30d35e4e506bd08ca759494ba36}\label{classGameEngine_1_1Entity_a53cae30d35e4e506bd08ca759494ba36}} 
+\index{GameEngine::Entity@{GameEngine::Entity}!\_type@{\_type}}
+\index{\_type@{\_type}!GameEngine::Entity@{GameEngine::Entity}}
+\doxysubsubsection{\texorpdfstring{\_type}{\_type}}
+{\footnotesize\ttfamily Game\+Engine\+::\+Entity\+Type Game\+Engine\+::\+Entity\+::\+\_\+type}
+
+
+
+\+\_\+type variable 
+
+The type of this \mbox{\hyperlink{classGameEngine_1_1Entity}{Entity}} (is it a Player, a Monster, a Rocket)~\newline
+Look the type in Constant.\+hpp -\/$>$ Type~\newline
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Lib/\+Game\+Engine/include/\+Entity/Entity.\+hpp\end{DoxyCompactItemize}
