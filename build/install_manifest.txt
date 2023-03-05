@@ -1,2 +1,0 @@
-/home/reyden-martin/Documents/Tech3/R-Type/B-CPP-500-PAR-5-2-rtype-martin.leblancs/bin/r-type_server
-/home/reyden-martin/Documents/Tech3/R-Type/B-CPP-500-PAR-5-2-rtype-martin.leblancs/bin/r-type_client
