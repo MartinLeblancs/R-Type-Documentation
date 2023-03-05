@@ -14,7 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import {styled} from "@mui/material";
 
-const pages = ['The project', 'Documentation', 'Download'];
+const pages = ['The project', 'Documentation', 'Download', 'GitHub];
 
 function Navbar() {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -29,6 +29,9 @@ function Navbar() {
         console.log(page);
         if (page === 'Documentation') {
             window.open('https://martinleblancs.github.io/R-Type-Documentation/annotated.html', '_blank');
+        }
+        else if (page === 'GitHub') {
+            window.open('https://github.com/MartinLeblancs/R-Type-Documentation', '_blank');
         }
         else {
             const section = document.getElementById(page);
