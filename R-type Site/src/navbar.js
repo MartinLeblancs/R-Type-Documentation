@@ -14,7 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import {styled} from "@mui/material";
 
-const pages = ['The project', 'Documentation', 'Download', 'GitHub];
+const pages = ['The project', 'Documentation', 'Download', 'GitHub'];
 
 function Navbar() {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
