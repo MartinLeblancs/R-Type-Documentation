@@ -11,6 +11,7 @@
 #include "../../../Lib/GameEngine/include/Components/Damages.hpp"
 #include "../../../Lib/GameEngine/include/Components/Cooldown.hpp"
 #include "../../include/utils/unloadId.hpp"
+#include "../../include/utils/sendWaveNumber.hpp"
 
 #define RAND_POWERUP 10
 
@@ -41,11 +42,13 @@ void Server::Enemy::run()
                     std::cout << "New boss generated" << std::endl;
                     setDifficulty(getDifficulty() + (findNumberPlayer()));
                     setWave(getWave() + 1);
+                    sendWaveNumber((uint32_t)getWave(), _server);
                 } else {
                     _isWaveBoss = false;
                     generateWave();
                     std::cout << "New Wave generated. wave number: " << getWave() << std::endl;
                     setWave(getWave() + 1);
+                    sendWaveNumber(getWave(), _server);
                 }
                 break;
             }
@@ -173,15 +176,16 @@ int Server::Enemy::findNumberEnemy()
 }
 
 void Server::Enemy::generateWave(void) {
-    int i = rand() % (2 * getDifficulty()) + 2;
+    int i = (int) sqrt(getDifficulty()) + (rand() % findNumberPlayer());
+    std::cout << "i: " << i << std::endl;
     while (i > 0) {
         _entityManager->CreateEnemy(
-            GameEngine::CONST_HEALTH * getDifficulty() * 2, 
-            GameEngine::CONST_DAMAGES, 
-            GameEngine::CONST_COOLDOWN + 1000 - (getDifficulty() * i * 3), 
-            GameEngine::CONST_SPEED / 7, 
+            GameEngine::CONST_HEALTH * i * 10,
+            GameEngine::CONST_DAMAGES,
+            GameEngine::CONST_COOLDOWN + 700 - (rand() % (i * 10)),
+            GameEngine::CONST_SPEED / 5, 
             "", 
-            { (float)(rand() * (1920 + 1 - 1700) / RAND_MAX + 1700), (float)(rand() * (1000 + 1 - 0) / RAND_MAX + 0)}
+            {(float)(rand() % 1000 + 980), (float)(rand() % 1080)}
         );
         _entityManager->getEntityList().back()->getComp<GameEngine::Hitbox>()->_hitbox = {140, 90, 280, 80};
         _entityManager->getEntityList().back()->getComp<GameEngine::Position>()->_direction = GameEngine::MOVE_LEFT;
@@ -189,18 +193,18 @@ void Server::Enemy::generateWave(void) {
     }
 }
 
-
-
 void Server::Enemy::generateBoss(void) {
-    int i = rand() % (4 * getDifficulty()) + getDifficulty();
+    int i = (int) sqrt(getDifficulty()) + (rand() % findNumberPlayer());
+    std::cout << "i: " << i << std::endl;
     _entityManager->CreateEnemy(
-        GameEngine::CONST_HEALTH * getDifficulty() * 10,
+        GameEngine::CONST_HEALTH * i * 50,
         GameEngine::CONST_DAMAGES,
-        GameEngine::CONST_COOLDOWN + 700 + i / 2,
-        GameEngine::CONST_SPEED / 6,
+        GameEngine::CONST_COOLDOWN + 700 - (i * 3 * rand() % (i * 10)),
+        GameEngine::CONST_SPEED / 3 ,
         "",
-        {(float)(rand() * (1920 + 1.0 - 1900) / RAND_MAX + 1900),(float)(rand() * (1000 + 1.0 - 0) / RAND_MAX + 0)}
+        {(float)(300),(float)(800)}
     );
+    
     _entityManager->getEntityList().back()->getComp<GameEngine::Hitbox>()->_hitbox = {140, 90, 280, 80};
     setRandDirrection(_entityManager->getEntityList().back());
 }
@@ -264,7 +268,7 @@ void Server::Enemy::isEnemyPositionValid(const std::shared_ptr<GameEngine::Entit
         entity->getComp<GameEngine::Position>()->setPosition(pos.x, WINDOW_HEIGHT - 201);
         changeDirrection(entity);
     } 
-    move(entity, dirrection);
+    //move(entity, dirrection);
 }
 
 void Server::Enemy::changeDirrection(const std::shared_ptr<GameEngine::Entity>& entity)

@@ -15,7 +15,7 @@ link_directories(${CONAN_LIB_DIRS})
 
 project(r-type_client
         VERSION 0.1.0
-        LANGUAGES)
+        LANGUAGES CXX)
 
 set(SRCS
         Client/src/main.cpp
@@ -48,7 +48,7 @@ target_include_directories(r-type_client PUBLIC
 
 project(r-type_server
         VERSION 0.1.0
-        LANGUAGES)
+        LANGUAGES CXX)
 
 set(SRC_SERVER
         Server/src/main.cpp
@@ -61,6 +61,7 @@ set(SRC_SERVER
         Server/src/Entities/Wall.cpp
         Server/src/utils/utils.cpp
         Server/src/utils/unloadId.cpp
+        Server/src/utils/sendWaveNumber.cpp
         Server/src/ManageLobby.cpp
         )
 
@@ -75,6 +76,7 @@ set(HEADERS_SERVER
         Server/include/utils/utils.hpp
 	Server/include/utils/shutdown.hpp
         Server/include/utils/unloadId.hpp
+        Server/include/utils/sendWaveNumber.hpp
         Server/include/ManageLobby.hpp
         )
 

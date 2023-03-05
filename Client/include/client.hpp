@@ -22,7 +22,15 @@
 namespace Game {
 	class Client {
 		public:
+			//! Client constructor
+			/*!
+		 	 The constructor will initialize the client
+	   		*/
 			Client(const std::string &host, const unsigned short int &port);
+			//! Client destructor
+			/*!
+		 	 The destructor will unload the client
+	   		*/
 			~Client();
 			//! start function
         	/*!
@@ -73,6 +81,7 @@ namespace Game {
         	/*!
          	 The function gets all the lobbies from the server
        		*/
+			int updateWaveNumber(CombOwnedMsg &msg);
 			int saveLobbyList(CombOwnedMsg &msg);
 			//! savePlayerList function
         	/*!
@@ -84,8 +93,17 @@ namespace Game {
          	 The function gets all the chat messages from the server
        		*/
 			int saveTChat(CombOwnedMsg &owner);
+			//! id variable
+			/*!
+		 	 The variable is the id of the player
+	   		*/
 			uint32_t id;
+			//! _score variable
+			/*!
+		 	 The variable is the score of the player
+	   		*/
 			uint32_t _score;
+			uint32_t _waveNbr;
 		private:
 			bool _preLoaded;
 			EntityHandler _entityHandler;

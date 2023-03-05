@@ -53,14 +53,13 @@ class EntityHandler
        	*/
         void preLoadTextures(const std::string &playerSkin, const std::string &enemySkin);
     private:
-	    std::unique_ptr<GameEngine::EntityManager> _entityManager;
+	      std::unique_ptr<GameEngine::EntityManager> _entityManager;
         GameEngine::Style _style;
         Texture2D _playerSkin;
         Texture2D _enemySkin;
         Texture2D _rocketSkin;
         Texture2D _wall;
         Texture2D _powerup;
-
         SoundManager _soundManager;
 };
 

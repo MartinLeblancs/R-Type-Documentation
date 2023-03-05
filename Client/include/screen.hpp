@@ -209,6 +209,7 @@ class Screen {
     GameEngine::Text _VolumeTitle;
     GameEngine::Text _VolumeValue;
     GameEngine::Text _Score;
+    GameEngine::Text _WaveNbr;
 
     GameEngine::Button _joinLobbyButton;
     GameEngine::Button _playButton;

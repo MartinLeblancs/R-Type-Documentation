@@ -39,6 +39,19 @@ Game::Client::Client(const std::string &host, const unsigned short int &port)
 	_cmds[Network::SCORE] = [=, this](CombOwnedMsg &owner) {
 		return updateScore(owner);
 	};
+	_cmds[Network::WAVENBR] = [=, this](CombOwnedMsg &owner) {
+		return updateWaveNumber(owner);
+	};
+}
+
+int Game::Client::updateWaveNumber(CombOwnedMsg &owner)
+{
+	if (owner.msg.body.size() == sizeof(uint32_t)) {
+		owner.msg >> _waveNbr;
+		_client->setWaveNbr(_waveNbr);
+		std::cout << "WAVE NBR: " << _client->getWaveNbr() << std::endl;
+	}
+	return 0;
 }
 
 int Game::Client::updateScore(CombOwnedMsg &owner)
@@ -74,7 +87,7 @@ int Game::Client::savePlayerList(CombOwnedMsg &owner)
 
 int Game::Client::saveTChat(CombOwnedMsg &owner)
 {
-	char c;
+	char c = 0;
 
     while (owner.msg.body.size() > 0)
     {
@@ -101,7 +114,6 @@ int Game::Client::saveLobbyList(CombOwnedMsg &owner)
 		while (owner.msg.body.size()) {
 			owner.msg >> lobyId;
 			owner.msg >> nbPlayers;
-			std::cout << "nbPlayers: " << nbPlayers << " lobyID: " << lobyId << std::endl;
 			_lobbyList.push_back(std::make_tuple(nbPlayers, lobyId));
 		}
 	}

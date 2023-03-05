@@ -85,6 +85,10 @@ void Screen::setMenuTextures()
     _Score.setFontSize(50);
     _Score.setFontColor(WHITE);
     _Score.setposText(_screenWidth / 2 + 600, _screenHeight / 2 - 500);
+    _WaveNbr.setFontSize(50);
+    _WaveNbr.setFontColor(WHITE);
+    _WaveNbr.setposText(_screenWidth / 2 + 600, _screenHeight / 2 - 400);
+    
 }
 
 void Screen::mainMenu()
@@ -378,6 +382,8 @@ void Screen::DrawGame()
     }
     _Score.setText("Score : " + std::to_string(_client->getScore()));
     _Score.drawText();
+    _WaveNbr.setText("Wave : " + std::to_string(_client->getWaveNbr()));
+    _WaveNbr.drawText();
 }
 
 void Screen::lobbyMenu()

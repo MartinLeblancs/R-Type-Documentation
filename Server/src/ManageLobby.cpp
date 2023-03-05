@@ -111,7 +111,6 @@ void Server::ManageLobby::getMessages()
             }
 
             std::reverse(_chatMessage.begin(), _chatMessage.end());
-            std::cout << _chatMessage << std::endl;
             sendChatMessage(owner);
 		}
         _msgList->pop();

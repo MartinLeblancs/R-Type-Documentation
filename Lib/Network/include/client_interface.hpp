@@ -81,11 +81,29 @@ namespace Network {
 			{
 				return _score;
 			}
+			//! setWaveNbr function
+			/*!
+			 * This function is used to set the wave number of the connection
+			 * \param waveNbr the wave number of the connection
+			*/
+			void setWaveNbr(const uint32_t &waveNbr)
+			{
+				_waveNbr = waveNbr;
+			}
+			//! getWaveNbr function
+			/*!
+			 * This function is used to get the wave number of the connection
+			 * \return the wave number of the connection
+			 */
+			uint32_t getWaveNbr() const
+			{
+				return _waveNbr;
+			}
 			//! connect function
 			/*!
 			 * This function is used to connect to the server
 			 * \return 0 if the connection is successful, -1 otherwise
-			 */
+			*/
 			int connect()
 			{
 				try {
@@ -172,6 +190,7 @@ namespace Network {
 			bool _running;
 			uint32_t _id;
 			uint32_t _score;
+			uint32_t _waveNbr;
 	};
 };
 

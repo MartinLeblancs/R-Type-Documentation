@@ -20,11 +20,9 @@ namespace Network {
 
 		 @param HELLO_UDP [UDP] is used to send the player id to the server
 		 @param MOVE [UDP] is used to tel to the server that the user pressed an arrow key and wants to move. args -> player_id vector_x, vector_y
-		 @param DEAD [UDP] is used to send the player id to the server when the player is dead. args -> none
 		 @param POS [UDP] is used to send the position of the player to the server. args -> entity_id x, y;entity_id x,y ...
 		 @param KILL [UDP] is used to send the id of the player killed to the server. args -> entity_id
 		 @param SPAWN [UDP] is used to send the id of the player spawned to the server. args -> entity_type, entity_id, x, y
-		 @param CRASH [UDP] is used to send the id of the player crashed to the server. args -> player_id
 		*/
 	enum Codes {
 		HELLO_TCP = 0,
@@ -43,13 +41,12 @@ namespace Network {
         LOBBY_CREATION_SUCCESS = 13,
         LOBBY_CREATION_FAILURE = 14,
 		SCORE = 15,
+		WAVENBR = 16,
 		START_GAME,
 		LEAVE,
-        DEAD,
         POS,
         KILL,
         SPAWN,
-        CRASH,
 		UNKNOWN,
         DISCONNECT,
 		INPUT_TCHAT,

@@ -75,8 +75,12 @@ In this directory you have access to documentation explaining things to know abo
 
 # Prerequisites
 
+* [Conan(Version 1.59.0)](https://conan.io)
+* [CMake](https://cmake.org)
+
 ```sh
-   ```
+    - pip install conan==1.59.0
+```
 
 # Installation
 

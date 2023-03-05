@@ -65,7 +65,6 @@ void Server::PowerUp::move(const std::shared_ptr<GameEngine::Entity>& entity, co
     Vector2 pos = entity->getComp<GameEngine::Position>()
             ->getPosition();
     int speed = 1;
-    std::cout << "speed: " << speed << std::endl;
     entity->getComp<GameEngine::Position>()->setPosition
     (static_cast<uint16_t>(pos.x) - speed, static_cast<uint16_t>(pos.y));
 }

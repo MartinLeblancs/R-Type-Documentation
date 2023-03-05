@@ -52,15 +52,7 @@ void Server::Wall::run()
 }
 
 void Server::Wall::generateWall() {
-    std::cout << "Wall generated" << std::endl;
-    uint16_t health = 1000;
-    uint16_t damages = 10;
-    uint16_t speed = 1;
-    const char *path = "";
-    int randx = rand() % 1080 + 1;
-    Vector2 position = {1920, (float)randx};
-
-    _entityManager->CreateWall(health, damages, speed, path, position);
+    _entityManager->CreateWall(1000, 10, 1, "", {(float)1920, (float)(rand() % 1080)});
     _entityManager->getEntityList().back()->getComp<GameEngine::Hitbox>()->_hitbox = {130, 200, 200, 200};
     _entityManager->getEntityList().back()->getComp<GameEngine::Position>()->_direction = GameEngine::MOVE_LEFT;
 }
@@ -77,12 +69,10 @@ void Server::Wall::move(const std::shared_ptr<GameEngine::Entity>& entity) {
     int speed = entity->getComp<GameEngine::Speed>()->_speed;
     Vector2 pos = entity->getComp<GameEngine::Position>()->getPosition();
     entity->getComp<GameEngine::Position>()->setPosition(static_cast<uint16_t>(pos.x) - speed, static_cast<uint16_t>(pos.y));
-    // std::cout << "x = " << pos.x << " y = " << pos.y << std::endl;
 }
 
 void Server::Wall::sendUpdateMessage(const std::shared_ptr<GameEngine::Entity>& entity)
 {
-    // set the header of the message we gonna send to the client
     Network::Message<Network::Codes> messageUpdate;
     messageUpdate.header.header_id = Network::UPDATE_ENTITIES;
     messageUpdate << static_cast<uint16_t>(entity->getComp<GameEngine::Position>()->getPosition().y);
@@ -104,6 +94,7 @@ bool Server::Wall::isPositionValid(const std::shared_ptr<GameEngine::Entity>& en
 
 void Server::Wall::hittingPlayer(const std::shared_ptr<GameEngine::Entity>& entity, const std::shared_ptr<GameEngine::Entity>& player) {
     player->getComp<GameEngine::Health>()->_health = 0;
+    _score += 10;
     destroyWall(entity);
 }
 
@@ -113,6 +104,7 @@ bool Server::Wall::hitByRocket(const std::shared_ptr<GameEngine::Entity>& entity
 
     entity->getComp<GameEngine::Health>()->_health -= damages;
     if (hp <= 0) {
+        _score += 10;
         destroyWall(entity);
         return false;
     }
@@ -121,7 +113,6 @@ bool Server::Wall::hitByRocket(const std::shared_ptr<GameEngine::Entity>& entity
 
 
 void Server::Wall::destroyWall(const std::shared_ptr<GameEngine::Entity>& entity) {
-    _score += 10;
     int r = rand() % POWERUP_RATE + 1;
     if (r <= 100) {
         addPowerUp(entity);
@@ -130,7 +121,6 @@ void Server::Wall::destroyWall(const std::shared_ptr<GameEngine::Entity>& entity
 }
 
 void Server::Wall::destroyEntity(const std::shared_ptr<GameEngine::Entity>& entity) {
-    //MESSAGE TO UNLOAD !!!
     sendMessageUnloadID(entity->_id, _server);
     _entityManager->popEntity(entity->_id);
 }
@@ -140,7 +130,6 @@ void Server::Wall::checkColisionPlayer(const std::shared_ptr<GameEngine::Entity>
         && player->getComp<GameEngine::Position>()->getPosition().x <= entity->getComp<GameEngine::Position>()->getPosition().x + entity->getComp<GameEngine::Hitbox>()->_hitbox.x / 2 
         && player->getComp<GameEngine::Position>()->getPosition().y >= entity->getComp<GameEngine::Position>()->getPosition().y - entity->getComp<GameEngine::Hitbox>()->_hitbox.y / 2 
         && player->getComp<GameEngine::Position>()->getPosition().y <= entity->getComp<GameEngine::Position>()->getPosition().y + entity->getComp<GameEngine::Hitbox>()->_hitbox.y / 2) {
-    
         hittingPlayer(entity, player);
     }
 }
