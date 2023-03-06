@@ -33,6 +33,9 @@ function Navbar() {
         else if (page === 'GitHub') {
             window.open('https://github.com/MartinLeblancs/R-Type-Documentation', '_blank');
         }
+        else if (page === 'Download') {
+            window.open('https://github.com/EpitechPromo2025/B-CPP-500-PAR-5-2-rtype-martin.leblancs/archive/refs/tags/v1.0.zip', '_blank');
+        }
         else {
             const section = document.getElementById(page);
             section.scrollIntoView({behavior: "smooth", inline: "nearest"});
