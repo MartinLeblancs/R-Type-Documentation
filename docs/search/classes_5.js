@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['networkerror_128',['NetworkError',['../classNetwork_1_1NetworkError.html',1,'Network']]]
+  ['lobby_260',['Lobby',['../classServer_1_1Lobby.html',1,'Server']]]
 ];

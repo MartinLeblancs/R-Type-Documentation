@@ -1,15 +1,19 @@
 var searchData=
 [
-  ['_5fbutton_226',['_button',['../classGameEngine_1_1Button.html#a8bdc7c231253de1308f1103ffef8a6cc',1,'GameEngine::Button']]],
-  ['_5fcolor_227',['_color',['../classGameEngine_1_1Text.html#a9d6781d46bf2736a3ee146a6a4ec6e10',1,'GameEngine::Text']]],
-  ['_5ffont_228',['_font',['../classGameEngine_1_1Text.html#adfeb5412df35a9460b978abf42829b11',1,'GameEngine::Text']]],
-  ['_5fhost_229',['_host',['../classNetwork_1_1ServerIT.html#adf5751a95cfaace7b7fd8bf5e3024810',1,'Network::ServerIT']]],
-  ['_5fid_230',['_id',['../classGameEngine_1_1Entity.html#ab94e2fb2ccb96812015548f3cf1126fa',1,'GameEngine::Entity']]],
-  ['_5fpos_231',['_pos',['../classGameEngine_1_1Button.html#a882b122f2fc5904287b39670875a56bb',1,'GameEngine::Button::_pos()'],['../classGameEngine_1_1Text.html#a489542c791f9aeb0c6da53313e8c05e5',1,'GameEngine::Text::_pos()']]],
-  ['_5fsize_232',['_size',['../classGameEngine_1_1Text.html#a8ca299a19f12a1f4c0139de4d2fb3ddf',1,'GameEngine::Text']]],
-  ['_5fsprite_233',['_sprite',['../classGameEngine_1_1Sprite.html#a0eae69e39d7c79d89fa89c4220c75b69',1,'GameEngine::Sprite']]],
-  ['_5fspriterect_234',['_spriteRect',['../classGameEngine_1_1Sprite.html#a1e0bd70c336635ba3e6b6526c0a92350',1,'GameEngine::Sprite']]],
-  ['_5fstyle_235',['_style',['../classGameEngine_1_1Text.html#a0ba279cb2fd5583c85302bd60f847f44',1,'GameEngine::Text']]],
-  ['_5ftext_236',['_text',['../classGameEngine_1_1Text.html#a8c2992095483d2f0dd7a363e44ee2115',1,'GameEngine::Text']]],
-  ['_5ftype_237',['_type',['../classGameEngine_1_1Entity.html#a53cae30d35e4e506bd08ca759494ba36',1,'GameEngine::Entity']]]
+  ['_5factionqueue_487',['_actionQueue',['../classServer_1_1PowerUp.html#a06ad98505592d62486b820943027c98f',1,'Server::PowerUp::_actionQueue()'],['../classServer_1_1Player.html#a79648f1850d276352d07f2665e030931',1,'Server::Player::_actionQueue()']]],
+  ['_5fbutton_488',['_button',['../classGameEngine_1_1Button.html#a8bdc7c231253de1308f1103ffef8a6cc',1,'GameEngine::Button']]],
+  ['_5fcolor_489',['_color',['../classGameEngine_1_1Text.html#a9d6781d46bf2736a3ee146a6a4ec6e10',1,'GameEngine::Text']]],
+  ['_5ffont_490',['_font',['../classGameEngine_1_1Text.html#adfeb5412df35a9460b978abf42829b11',1,'GameEngine::Text']]],
+  ['_5fhost_491',['_host',['../classNetwork_1_1ServerIT.html#adf5751a95cfaace7b7fd8bf5e3024810',1,'Network::ServerIT']]],
+  ['_5fid_492',['_id',['../classGameEngine_1_1Entity.html#ab94e2fb2ccb96812015548f3cf1126fa',1,'GameEngine::Entity']]],
+  ['_5fplayerlist_493',['_playerList',['../classServer_1_1Player.html#a5eecf4c31bc66e900c1e71d536713d16',1,'Server::Player']]],
+  ['_5fpos_494',['_pos',['../classGameEngine_1_1Button.html#a882b122f2fc5904287b39670875a56bb',1,'GameEngine::Button::_pos()'],['../classGameEngine_1_1Text.html#a489542c791f9aeb0c6da53313e8c05e5',1,'GameEngine::Text::_pos()']]],
+  ['_5fpoweruplist_495',['_powerUpList',['../classServer_1_1PowerUp.html#a17977d435f52fb923d6f0280e294c5b3',1,'Server::PowerUp']]],
+  ['_5fscore_496',['_score',['../classGame_1_1Client.html#ab91b2e82d96241480642f659a9bec3a7',1,'Game::Client::_score()'],['../classServer_1_1Lobby.html#ad7fea3d0b559c2694f27bb65af8196f9',1,'Server::Lobby::_score()'],['../classServer_1_1Enemy.html#a53c0ee6252d1b1ce675b678573647e71',1,'Server::Enemy::_score()'],['../classServer_1_1PowerUp.html#ae54df258ebdf3db44eefe130380128e9',1,'Server::PowerUp::_score()']]],
+  ['_5fsize_497',['_size',['../classGameEngine_1_1Text.html#a8ca299a19f12a1f4c0139de4d2fb3ddf',1,'GameEngine::Text']]],
+  ['_5fsprite_498',['_sprite',['../classGameEngine_1_1Sprite.html#a0eae69e39d7c79d89fa89c4220c75b69',1,'GameEngine::Sprite']]],
+  ['_5fspriterect_499',['_spriteRect',['../classGameEngine_1_1Sprite.html#a1e0bd70c336635ba3e6b6526c0a92350',1,'GameEngine::Sprite']]],
+  ['_5fstyle_500',['_style',['../classGameEngine_1_1Text.html#a0ba279cb2fd5583c85302bd60f847f44',1,'GameEngine::Text']]],
+  ['_5ftext_501',['_text',['../classGameEngine_1_1Text.html#a8c2992095483d2f0dd7a363e44ee2115',1,'GameEngine::Text']]],
+  ['_5ftype_502',['_type',['../classGameEngine_1_1Entity.html#a53cae30d35e4e506bd08ca759494ba36',1,'GameEngine::Entity']]]
 ];
