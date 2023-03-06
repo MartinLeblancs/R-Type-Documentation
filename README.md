@@ -95,13 +95,13 @@ Clone the repo
   ```sh
   ./compile_linux.sh
   ./bin/r-type_server [PORT]
-  ./bin/r-type_client [PORT]
+  ./bin/r-type_client [IP] [PORT]
   ```
    On WINDOWS
   ```sh
   ./compile_windows.sh
   ./bin/r-type_server.exe [PORT]
-  ./bin/r-type_client.exe [PORT]
+  ./bin/r-type_client.exe [IP] [PORT]
   ```
 
 
