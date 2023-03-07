@@ -7,15 +7,15 @@ import { Grid } from "@mui/material";
 
 function MainPart() {
     return (
-        <div className="mainPart" id="main">
-            <Box sx={{ position: "relative" }}>
-                <div style={{ position: "relative" }}>
+            <Grid container>
+                <Grid item>
                     <img
                         src="https://images4.alphacoders.com/248/248634.jpg"
                         style={{ width: "100%" }}
                         alt={"Background"}
                     />
-
+                </Grid>
+                <Grid item>
                     <Typography
                         variant="h2"
                         component="h1"
@@ -30,7 +30,9 @@ function MainPart() {
                     >
                         R-Type The Game
                     </Typography>
-                    <Typography
+                </Grid>
+                <Grid item>
+                <Typography
                         variant="h3"
                         component="h1"
                         sx={{
@@ -44,7 +46,9 @@ function MainPart() {
                     >
                         The ultimate space battle starts here
                     </Typography>
+                </Grid>
                     <Grid container>
+                        <Grid item>
                         <Typography
                             variant="h3"
                             component="h1"
@@ -59,20 +63,23 @@ function MainPart() {
                         >
                             Available on :
                         </Typography>
+                        </Grid>
+                        <Grid item>
                     <img
                         src={linux}
                         style={{ position: "absolute", width: '10%', top: '80%', left: '40%' }}
                         alt={"Image1"}
                     />
+                        </Grid>
+                        <Grid item>
                     <img
                         src={windows}
                         style={{ position: "absolute", width: '8%', top: '82%', left: '53%' }}
                         alt={"Image2"}
                     />
+                        </Grid>
                     </Grid>
-                </div>
-            </Box>
-        </div>
+            </Grid>
     );
 }
 
